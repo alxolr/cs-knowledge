@@ -90,108 +90,108 @@ Create a complete 52-module computer science training curriculum as a collection
     - Same structure and quality requirements as 5.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-- [ ] 6. Checkpoint — Verify Beginner Algorithms modules
+- [x] 6. Checkpoint — Verify Beginner Algorithms modules
   - Ensure all 9 Beginner-tier Algorithms & Data Structures modules are complete, consistently formatted, and prerequisite lists match the track README graph. Ask the user if questions arise.
 
-- [ ] 7. Create Algorithms & Data Structures Intermediate-tier concept modules
-  - [ ] 7.1 Create `curriculum/algorithms-and-data-structures/two-pointers/README.md`
+- [x] 7. Create Algorithms & Data Structures Intermediate-tier concept modules
+  - [x] 7.1 Create `curriculum/algorithms-and-data-structures/two-pointers/README.md`
     - Concept: Two Pointers — Difficulty Tier: Intermediate — Prerequisites: Arrays
     - Include concept overview, prerequisite list, and 3–10 daily problems with mixed difficulty (Intermediate tier)
     - Each problem: title, problem statement, difficulty, estimated time (30–60 min), example input/output, at least one hint, solution outline
     - At least 1 Easy and at least 1 Hard problem; problems ordered by difficulty; no duplicate sub-skills
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 7.2 Create `curriculum/algorithms-and-data-structures/sliding-window/README.md`
+  - [x] 7.2 Create `curriculum/algorithms-and-data-structures/sliding-window/README.md`
     - Concept: Sliding Window — Difficulty Tier: Intermediate — Prerequisites: Arrays
     - Same structure and quality requirements as 7.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 7.3 Create `curriculum/algorithms-and-data-structures/trees/README.md`
+  - [x] 7.3 Create `curriculum/algorithms-and-data-structures/trees/README.md`
     - Concept: Trees — Difficulty Tier: Intermediate — Prerequisites: Linked Lists, Recursion
     - Same structure and quality requirements as 7.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 7.4 Create `curriculum/algorithms-and-data-structures/binary-search-trees/README.md`
+  - [x] 7.4 Create `curriculum/algorithms-and-data-structures/binary-search-trees/README.md`
     - Concept: Binary Search Trees — Difficulty Tier: Intermediate — Prerequisites: Binary Search, Trees
     - Same structure and quality requirements as 7.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 7.5 Create `curriculum/algorithms-and-data-structures/heaps/README.md`
+  - [x] 7.5 Create `curriculum/algorithms-and-data-structures/heaps/README.md`
     - Concept: Heaps — Difficulty Tier: Intermediate — Prerequisites: Trees, Binary Search Trees
     - Same structure and quality requirements as 7.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 7.6 Create `curriculum/algorithms-and-data-structures/tries/README.md`
+  - [x] 7.6 Create `curriculum/algorithms-and-data-structures/tries/README.md`
     - Concept: Tries — Difficulty Tier: Intermediate — Prerequisites: Hash Maps, Trees
     - Same structure and quality requirements as 7.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 7.7 Create `curriculum/algorithms-and-data-structures/matrix-traversal/README.md`
+  - [x] 7.7 Create `curriculum/algorithms-and-data-structures/matrix-traversal/README.md`
     - Concept: Matrix Traversal — Difficulty Tier: Intermediate — Prerequisites: Arrays
     - Same structure and quality requirements as 7.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 7.8 Create `curriculum/algorithms-and-data-structures/graphs/README.md`
+  - [x] 7.8 Create `curriculum/algorithms-and-data-structures/graphs/README.md`
     - Concept: Graphs — Difficulty Tier: Intermediate — Prerequisites: Queues, Trees
     - Same structure and quality requirements as 7.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 7.9 Create `curriculum/algorithms-and-data-structures/bit-manipulation/README.md`
+  - [x] 7.9 Create `curriculum/algorithms-and-data-structures/bit-manipulation/README.md`
     - Concept: Bit Manipulation — Difficulty Tier: Intermediate — Prerequisites: None
     - Same structure and quality requirements as 7.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-- [ ] 8. Checkpoint — Verify Intermediate Algorithms modules
+- [x] 8. Checkpoint — Verify Intermediate Algorithms modules
   - Ensure all 9 Intermediate-tier Algorithms & Data Structures modules are complete and consistent. Ask the user if questions arise.
 
-- [ ] 9. Create Algorithms & Data Structures Advanced-tier concept modules
-  - [ ] 9.1 Create `curriculum/algorithms-and-data-structures/backtracking/README.md`
+- [x] 9. Create Algorithms & Data Structures Advanced-tier concept modules
+  - [x] 9.1 Create `curriculum/algorithms-and-data-structures/backtracking/README.md`
     - Concept: Backtracking — Difficulty Tier: Advanced — Prerequisites: Stacks, Recursion
     - Include concept overview, prerequisite list, and 3–10 daily problems skewing toward Hard (Advanced tier)
     - Each problem: title, problem statement, difficulty, estimated time (30–60 min), example input/output, at least one hint, solution outline
     - At least 1 Easy and at least 1 Hard problem; problems ordered by difficulty; no duplicate sub-skills
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 9.2 Create `curriculum/algorithms-and-data-structures/divide-and-conquer/README.md`
+  - [x] 9.2 Create `curriculum/algorithms-and-data-structures/divide-and-conquer/README.md`
     - Concept: Divide and Conquer — Difficulty Tier: Advanced — Prerequisites: Recursion
     - Same structure and quality requirements as 9.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 9.3 Create `curriculum/algorithms-and-data-structures/greedy-algorithms/README.md`
+  - [x] 9.3 Create `curriculum/algorithms-and-data-structures/greedy-algorithms/README.md`
     - Concept: Greedy Algorithms — Difficulty Tier: Advanced — Prerequisites: Sorting Algorithms
     - Same structure and quality requirements as 9.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 9.4 Create `curriculum/algorithms-and-data-structures/dynamic-programming/README.md`
+  - [x] 9.4 Create `curriculum/algorithms-and-data-structures/dynamic-programming/README.md`
     - Concept: Dynamic Programming — Difficulty Tier: Advanced — Prerequisites: Recursion, Backtracking, Divide and Conquer
     - Same structure and quality requirements as 9.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 9.5 Create `curriculum/algorithms-and-data-structures/interval-problems/README.md`
+  - [x] 9.5 Create `curriculum/algorithms-and-data-structures/interval-problems/README.md`
     - Concept: Interval Problems — Difficulty Tier: Advanced — Prerequisites: Sorting Algorithms, Greedy Algorithms
     - Same structure and quality requirements as 9.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 9.6 Create `curriculum/algorithms-and-data-structures/union-find/README.md`
+  - [x] 9.6 Create `curriculum/algorithms-and-data-structures/union-find/README.md`
     - Concept: Union Find — Difficulty Tier: Advanced — Prerequisites: Graphs
     - Same structure and quality requirements as 9.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 9.7 Create `curriculum/algorithms-and-data-structures/topological-sort/README.md`
+  - [x] 9.7 Create `curriculum/algorithms-and-data-structures/topological-sort/README.md`
     - Concept: Topological Sort — Difficulty Tier: Advanced — Prerequisites: Graphs
     - Same structure and quality requirements as 9.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 9.8 Create `curriculum/algorithms-and-data-structures/advanced-graph-algorithms/README.md`
+  - [x] 9.8 Create `curriculum/algorithms-and-data-structures/advanced-graph-algorithms/README.md`
     - Concept: Advanced Graph Algorithms — Difficulty Tier: Advanced — Prerequisites: Graphs, Union Find, Topological Sort
     - Same structure and quality requirements as 9.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-- [ ] 10. Checkpoint — Verify all Algorithms & Data Structures modules
+- [x] 10. Checkpoint — Verify all Algorithms & Data Structures modules
   - Ensure all 26 Algorithms & Data Structures concept modules exist, are consistently formatted, prerequisite lists are correct, and the track README table/graph matches. Ask the user if questions arise.
 
 - [ ] 11. Create Design Concepts Beginner-tier concept modules
-  - [ ] 11.1 Create `curriculum/design-concepts/object-oriented-design-principles/README.md`
+  - [x] 11.1 Create `curriculum/design-concepts/object-oriented-design-principles/README.md`
     - Concept: Object-Oriented Design Principles — Difficulty Tier: Beginner — Prerequisites: None
     - Include concept overview, prerequisite list, and 3–10 daily problems (Beginner tier skews toward Easy)
     - Each problem: title, problem statement, difficulty, estimated time (30–60 min), at least one concrete scenario, at least one hint, solution outline
@@ -199,22 +199,22 @@ Create a complete 52-module computer science training curriculum as a collection
     - At least 1 Easy and at least 1 Hard problem; problems ordered by difficulty; no duplicate sub-skills
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 11.2 Create `curriculum/design-concepts/solid-principles/README.md`
+  - [x] 11.2 Create `curriculum/design-concepts/solid-principles/README.md`
     - Concept: SOLID Principles — Difficulty Tier: Beginner — Prerequisites: Object-Oriented Design Principles
     - Same structure and quality requirements as 11.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 11.3 Create `curriculum/design-concepts/api-design/README.md`
+  - [x] 11.3 Create `curriculum/design-concepts/api-design/README.md`
     - Concept: API Design — Difficulty Tier: Beginner — Prerequisites: SOLID Principles
     - Same structure and quality requirements as 11.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 11.4 Create `curriculum/design-concepts/database-schema-design/README.md`
+  - [x] 11.4 Create `curriculum/design-concepts/database-schema-design/README.md`
     - Concept: Database Schema Design — Difficulty Tier: Beginner — Prerequisites: None
     - Same structure and quality requirements as 11.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 11.5 Create `curriculum/design-concepts/design-patterns-creational/README.md`
+  - [x] 11.5 Create `curriculum/design-concepts/design-patterns-creational/README.md`
     - Concept: Design Patterns (Creational) — Difficulty Tier: Beginner — Prerequisites: Object-Oriented Design Principles, SOLID Principles
     - Same structure and quality requirements as 11.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
