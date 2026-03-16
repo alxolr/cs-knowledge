@@ -9,11 +9,6 @@ A structured, year-long computer science training plan covering algorithms, data
 
 ## Curriculum Overview Diagram
 
-![Overview](curriculum/assets/overview-graph.svg)
-
-<details>
-<summary>Mermaid Source</summary>
-
 ```mermaid
 graph TD
     subgraph Beginner
@@ -36,8 +31,6 @@ graph TD
 
     Beginner --> Intermediate --> Advanced
 ```
-
-</details>
 
 ## All Concept Modules
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This design describes a 52-week computer science training curriculum delivered entirely as markdown documents. There is no application code, server, or database. The deliverable is a directory tree of `.md` files organized by track and week, plus SVG diagram assets and a pre-commit git hook for automated SVG regeneration.
+This design describes a 52-week computer science training curriculum delivered entirely as markdown documents. There is no application code, server, or database. The deliverable is a directory tree of `.md` files organized by track and week.
 
 The curriculum has two tracks running in parallel across the year:
 
@@ -16,7 +16,7 @@ Three difficulty tiers span the year:
 - **Intermediate** (Weeks 18–35): moderate topics, mixed difficulty
 - **Advanced** (Weeks 36–52): complex topics, at least 3 Hard problems per week
 
-Mermaid prerequisite graphs are embedded in track READMEs and exported as SVGs via a pre-commit hook using `mermaid-cli` (`mmdc`).
+Mermaid prerequisite graphs are embedded inline in track READMEs and rendered natively by GitHub, GitLab, and VS Code.
 
 ## Architecture
 
@@ -27,10 +27,6 @@ Since this is a pure document project, "architecture" refers to the file system 
 ```
 curriculum/
 ├── README.md                          # Top-level index with overview diagram
-├── assets/
-│   ├── algorithms-prerequisite-graph.svg
-│   ├── design-prerequisite-graph.svg
-│   └── overview-graph.svg
 ├── algorithms-and-data-structures/
 │   ├── README.md                      # Track index with Mermaid prerequisite graph
 │   ├── week-01-arrays/
@@ -40,17 +36,15 @@ curriculum/
 │   ├── ...                            # (odd-numbered weeks for this track)
 │   └── week-51-topological-sort/
 │       └── README.md
-├── design-concepts/
-│   ├── README.md                      # Track index with Mermaid prerequisite graph
-│   ├── week-02-oop-principles/
-│   │   └── README.md                  # Week_Plan document (concept + 5 daily problems)
-│   ├── week-04-solid-principles/
-│   │   └── README.md
-│   ├── ...                            # (even-numbered weeks for this track)
-│   └── week-52-payment-system-design/
-│       └── README.md
-└── hooks/
-    └── pre-commit                     # Git hook script for SVG generation
+└── design-concepts/
+    ├── README.md                      # Track index with Mermaid prerequisite graph
+    ├── week-02-oop-principles/
+    │   └── README.md                  # Week_Plan document (concept + 5 daily problems)
+    ├── week-04-solid-principles/
+    │   └── README.md
+    ├── ...                            # (even-numbered weeks for this track)
+    └── week-52-payment-system-design/
+        └── README.md
 ```
 
 ### Naming Conventions
@@ -65,7 +59,7 @@ Algorithms & Data Structures occupies odd weeks (1, 3, 5, …, 51) and Design Co
 
 ## Components and Interfaces
 
-Since there is no application code, "components" are the document templates and the hook script.
+Since there is no application code, "components" are the document templates.
 
 ### Component 1: Top-Level README.md
 
@@ -74,8 +68,7 @@ The top-level `curriculum/README.md` serves as the entry point. It contains:
 1. A title and introduction to the curriculum
 2. A table listing all 52 weeks with columns: Week #, Track, Concept, Difficulty Tier, Link
 3. A simplified Mermaid overview diagram showing high-level progression across both tracks
-4. The embedded SVG of the overview diagram via `![Overview](assets/overview-graph.svg)`
-5. Links to each track's README
+4. Links to each track's README
 
 ### Component 2: Track README.md
 
@@ -84,8 +77,6 @@ Each track directory has a `README.md` containing:
 1. Track title and description
 2. A table listing all weeks in that track with columns: Week #, Concept, Difficulty Tier, Prerequisites, Link
 3. A Mermaid prerequisite graph (inline code block) showing concept dependencies as a directed graph
-4. The embedded SVG of the prerequisite graph
-5. Both the Mermaid code block and the SVG image are included so the diagram renders in viewers with or without Mermaid support
 
 #### Track README Template
 
@@ -99,19 +90,12 @@ Each track directory has a `README.md` containing:
 The following diagram shows the prerequisite relationships between concepts in this track.
 Arrows point from prerequisite to dependent concept.
 
-![{Track Name} Prerequisites](../assets/{track-slug}-prerequisite-graph.svg)
-
-<details>
-<summary>Mermaid Source</summary>
-
 ```mermaid
 graph TD
     A[Arrays] --> B[Sorting Algorithms]
     A --> C[Binary Search]
     ...
 ```
-
-</details>
 
 ## Week Plans
 
@@ -226,103 +210,6 @@ For Design Concepts track problems, the "Example" section uses a concrete scenar
 **Expected Approach:** {Key design decisions and trade-offs to consider}
 ```
 
-
-### Component 4: Pre-Commit Hook Script
-
-The `hooks/pre-commit` script automates SVG generation from Mermaid code blocks.
-
-#### Hook Design
-
-```bash
-#!/usr/bin/env bash
-set -euo pipefail
-
-CURRICULUM_DIR="$(cd "$(dirname "$0")/../.." && pwd)/curriculum"
-ASSETS_DIR="$CURRICULUM_DIR/assets"
-
-# Check mermaid-cli is installed
-if ! command -v mmdc &> /dev/null; then
-    echo "ERROR: mermaid-cli (mmdc) is not installed."
-    echo "Install it with: npm install -g @mermaid-js/mermaid-cli"
-    exit 1
-fi
-
-# Define source markdown files and their corresponding SVG outputs
-declare -A DIAGRAM_MAP=(
-    ["$CURRICULUM_DIR/algorithms-and-data-structures/README.md"]="$ASSETS_DIR/algorithms-prerequisite-graph.svg"
-    ["$CURRICULUM_DIR/design-concepts/README.md"]="$ASSETS_DIR/design-prerequisite-graph.svg"
-    ["$CURRICULUM_DIR/README.md"]="$ASSETS_DIR/overview-graph.svg"
-)
-
-REGENERATED=0
-
-for MD_FILE in "${!DIAGRAM_MAP[@]}"; do
-    SVG_FILE="${DIAGRAM_MAP[$MD_FILE]}"
-
-    # Extract mermaid code block from markdown
-    MERMAID_BLOCK=$(sed -n '/^```mermaid$/,/^```$/p' "$MD_FILE" | sed '1d;$d')
-
-    if [ -z "$MERMAID_BLOCK" ]; then
-        continue
-    fi
-
-    # Compute hash of current mermaid content
-    CURRENT_HASH=$(echo "$MERMAID_BLOCK" | sha256sum | cut -d' ' -f1)
-
-    # Check if SVG exists and compare hashes
-    HASH_FILE="${SVG_FILE}.hash"
-    if [ -f "$SVG_FILE" ] && [ -f "$HASH_FILE" ]; then
-        STORED_HASH=$(cat "$HASH_FILE")
-        if [ "$CURRENT_HASH" = "$STORED_HASH" ]; then
-            continue  # Skip — no changes
-        fi
-    fi
-
-    # Generate SVG
-    TEMP_MMD=$(mktemp /tmp/mermaid-XXXXXX.mmd)
-    echo "$MERMAID_BLOCK" > "$TEMP_MMD"
-
-    if ! mmdc -i "$TEMP_MMD" -o "$SVG_FILE" -b transparent; then
-        echo "ERROR: SVG generation failed for $MD_FILE"
-        rm -f "$TEMP_MMD"
-        exit 1
-    fi
-
-    rm -f "$TEMP_MMD"
-    echo "$CURRENT_HASH" > "$HASH_FILE"
-    git add "$SVG_FILE" "$HASH_FILE"
-    REGENERATED=$((REGENERATED + 1))
-done
-
-if [ "$REGENERATED" -gt 0 ]; then
-    echo "Regenerated $REGENERATED SVG diagram(s)."
-fi
-```
-
-#### Hook Installation
-
-The top-level README should document how to install the hook:
-
-```bash
-cp curriculum/hooks/pre-commit .git/hooks/pre-commit
-chmod +x .git/hooks/pre-commit
-```
-
-### Component 5: Assets Directory
-
-The `assets/` directory stores generated SVG files and their content hashes:
-
-```
-assets/
-├── algorithms-prerequisite-graph.svg       # Generated from algorithms track README
-├── algorithms-prerequisite-graph.svg.hash  # SHA-256 of source Mermaid block
-├── design-prerequisite-graph.svg           # Generated from design track README
-├── design-prerequisite-graph.svg.hash
-├── overview-graph.svg                      # Generated from top-level README
-└── overview-graph.svg.hash
-```
-
-The `.hash` files enable the skip-if-unchanged optimization in the pre-commit hook.
 
 ## Data Models
 

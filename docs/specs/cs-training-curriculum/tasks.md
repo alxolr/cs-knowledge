@@ -2,17 +2,15 @@
 
 ## Overview
 
-Create a complete 52-module computer science training curriculum as a collection of markdown documents, organized into two tracks ("Algorithms & Data Structures" and "Design Concepts"), with Mermaid prerequisite graphs, SVG diagram assets, and an automated pre-commit hook for SVG regeneration. Each concept module is identified by its concept name (not a week number) and contains 3–10 daily problems depending on concept depth.
+Create a complete 52-module computer science training curriculum as a collection of markdown documents, organized into two tracks ("Algorithms & Data Structures" and "Design Concepts"), with Mermaid prerequisite graphs rendered natively by GitHub/GitLab/VS Code. Each concept module is identified by its concept name (not a week number) and contains 3–10 daily problems depending on concept depth.
 
 ## Tasks
 
 - [x] 1. Set up directory structure and foundational files
   - [x] 1.1 Create the curriculum directory tree
     - Create `curriculum/` root directory
-    - Create `curriculum/assets/` for SVG diagram files
     - Create `curriculum/algorithms-and-data-structures/` track directory
     - Create `curriculum/design-concepts/` track directory
-    - Create `curriculum/hooks/` for the pre-commit hook script
     - _Requirements: 8.1_
 
   - [x] 1.2 Create the top-level `curriculum/README.md`
@@ -20,78 +18,74 @@ Create a complete 52-module computer science training curriculum as a collection
     - Add a table listing all ~52 concept modules with columns: Track, Concept, Difficulty Tier, Link
     - Modules are identified by concept name, not week number
     - Add a simplified Mermaid overview diagram showing high-level progression across both tracks
-    - Embed the SVG via `![Overview](assets/overview-graph.svg)` alongside the Mermaid code block
     - Include links to each track's README
-    - _Requirements: 8.2, 9.6, 10.3, 10.5_
+    - _Requirements: 8.2, 9.6_
 
-- [ ] 2. Create Algorithms & Data Structures track index
-  - [ ] 2.1 Create `curriculum/algorithms-and-data-structures/README.md`
+- [x] 2. Create Algorithms & Data Structures track index
+  - [x] 2.1 Create `curriculum/algorithms-and-data-structures/README.md`
     - Write track title and description
     - Add a table listing all ~26 concept modules with columns: Concept, Difficulty Tier, Prerequisites, Link
     - Add the full Mermaid prerequisite graph showing directed edges from prerequisite to dependent concept (nodes labeled by concept name, not week number)
-    - Embed the SVG via `![Algorithms & Data Structures Prerequisites](../assets/algorithms-prerequisite-graph.svg)`
-    - Include both the inline Mermaid code block and the embedded SVG image
     - Prerequisite graph must be consistent with the prerequisite lists in each module document
-    - _Requirements: 4.1, 4.2, 4.4, 8.4, 9.1, 9.3, 9.4, 9.5, 10.3, 10.5_
+    - _Requirements: 4.1, 4.2, 4.4, 8.4, 9.1, 9.3, 9.4, 9.5_
 
-- [ ] 3. Create Design Concepts track index
-  - [ ] 3.1 Create `curriculum/design-concepts/README.md`
+- [x] 3. Create Design Concepts track index
+  - [x] 3.1 Create `curriculum/design-concepts/README.md`
     - Write track title and description
     - Add a table listing all ~26 concept modules with columns: Concept, Difficulty Tier, Prerequisites, Link
     - Add the full Mermaid prerequisite graph showing directed edges from prerequisite to dependent concept (nodes labeled by concept name, not week number)
-    - Embed the SVG via `![Design Concepts Prerequisites](../assets/design-prerequisite-graph.svg)`
-    - Include both the inline Mermaid code block and the embedded SVG image
     - Prerequisite graph must be consistent with the prerequisite lists in each module document
-    - _Requirements: 5.1, 5.2, 5.4, 8.4, 9.2, 9.3, 9.4, 9.5, 10.3, 10.5_
+    - _Requirements: 5.1, 5.2, 5.4, 8.4, 9.2, 9.3, 9.4, 9.5_
 
-- [ ] 4. Checkpoint — Verify track structure
+- [x] 4. Checkpoint — Verify track structure
   - Ensure the directory structure, top-level README, and both track READMEs are complete and internally consistent. Ask the user if questions arise.
 
-- [ ] 5. Create Algorithms & Data Structures Beginner-tier concept modules
-  - [ ] 5.1 Create `curriculum/algorithms-and-data-structures/arrays/README.md`
+- [x] 5. Create Algorithms & Data Structures Beginner-tier concept modules
+  - [x] 5.1 Create `curriculum/algorithms-and-data-structures/arrays/README.md`
     - Concept: Arrays — Difficulty Tier: Beginner — Prerequisites: None
     - Include concept overview, prerequisite list, and 3–10 daily problems (at least 1 Easy, at least 1 Hard, ordered by difficulty)
     - Beginner modules skew toward Easy problems
-    - Each problem: title, problem statement, difficulty, estimated time (30–60 min), example input/output, at least one hint, solution outline
+    - Each problem: title, problem statement, difficulty, estimated time (30–60 min), example input/output, at least one hint, solution outline with pseudocode
+    - Hints and solution outlines must be wrapped in collapsible `<details>` elements (hidden by default)
     - Problems must exercise different aspects of the concept (no duplicate sub-skills)
     - _Requirements: 1.4, 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 6.1, 6.3, 7.1, 7.2, 7.3, 8.3, 8.5_
 
-  - [ ] 5.2 Create `curriculum/algorithms-and-data-structures/linked-lists/README.md`
+  - [x] 5.2 Create `curriculum/algorithms-and-data-structures/linked-lists/README.md`
     - Concept: Linked Lists — Difficulty Tier: Beginner — Prerequisites: None
     - Same structure and quality requirements as 5.1
     - _Requirements: 1.4, 2.1, 2.2, 2.3, 2.4, 2.5, 3.1–3.8, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 5.3 Create `curriculum/algorithms-and-data-structures/stacks/README.md`
+  - [x] 5.3 Create `curriculum/algorithms-and-data-structures/stacks/README.md`
     - Concept: Stacks — Difficulty Tier: Beginner — Prerequisites: None
     - Same structure and quality requirements as 5.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 5.4 Create `curriculum/algorithms-and-data-structures/queues/README.md`
+  - [x] 5.4 Create `curriculum/algorithms-and-data-structures/queues/README.md`
     - Concept: Queues — Difficulty Tier: Beginner — Prerequisites: None
     - Same structure and quality requirements as 5.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 5.5 Create `curriculum/algorithms-and-data-structures/hash-maps/README.md`
+  - [x] 5.5 Create `curriculum/algorithms-and-data-structures/hash-maps/README.md`
     - Concept: Hash Maps — Difficulty Tier: Beginner — Prerequisites: None
     - Same structure and quality requirements as 5.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 5.6 Create `curriculum/algorithms-and-data-structures/string-manipulation/README.md`
+  - [x] 5.6 Create `curriculum/algorithms-and-data-structures/string-manipulation/README.md`
     - Concept: String Manipulation — Difficulty Tier: Beginner — Prerequisites: Arrays
     - Same structure and quality requirements as 5.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 5.7 Create `curriculum/algorithms-and-data-structures/sorting-algorithms/README.md`
+  - [x] 5.7 Create `curriculum/algorithms-and-data-structures/sorting-algorithms/README.md`
     - Concept: Sorting Algorithms — Difficulty Tier: Beginner — Prerequisites: Arrays
     - Same structure and quality requirements as 5.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 5.8 Create `curriculum/algorithms-and-data-structures/recursion/README.md`
+  - [x] 5.8 Create `curriculum/algorithms-and-data-structures/recursion/README.md`
     - Concept: Recursion — Difficulty Tier: Beginner — Prerequisites: None
     - Same structure and quality requirements as 5.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 5.9 Create `curriculum/algorithms-and-data-structures/binary-search/README.md`
+  - [x] 5.9 Create `curriculum/algorithms-and-data-structures/binary-search/README.md`
     - Concept: Binary Search — Difficulty Tier: Beginner — Prerequisites: Arrays, Sorting Algorithms
     - Same structure and quality requirements as 5.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 4.4, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
@@ -345,33 +339,8 @@ Create a complete 52-module computer science training curriculum as a collection
 - [ ] 16. Checkpoint — Verify all Design Concepts modules
   - Ensure all 26 Design Concepts concept modules exist, are consistently formatted, prerequisite lists are correct, and the track README table/graph matches. Ask the user if questions arise.
 
-- [ ] 17. Set up pre-commit hook and SVG generation tooling
-  - [ ] 17.1 Create `curriculum/hooks/pre-commit` script
-    - Write a bash script that extracts Mermaid code blocks from the three README files (top-level, algorithms track, design track)
-    - Generate SVG files using `mmdc` (mermaid-cli) and store them in `curriculum/assets/`
-    - Implement skip-if-unchanged optimization using SHA-256 hash files (`.svg.hash`)
-    - Fail the commit with a descriptive error if `mmdc` is not installed or SVG generation fails
-    - Auto-stage regenerated SVG and hash files via `git add`
-    - Make the script executable (`chmod +x`)
-    - _Requirements: 11.1, 11.2, 11.3, 11.4_
-
-  - [ ] 17.2 Document hook installation and mermaid-cli setup in `curriculum/README.md`
-    - Add a "Setup" or "Contributing" section to the top-level README
-    - Document how to install mermaid-cli: `npm install -g @mermaid-js/mermaid-cli`
-    - Document how to install the pre-commit hook: `cp curriculum/hooks/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit`
-    - _Requirements: 11.1, 11.4_
-
-- [ ] 18. Generate initial SVG assets
-  - [ ] 18.1 Generate SVG files from Mermaid diagrams
-    - Run `mmdc` to generate `curriculum/assets/overview-graph.svg` from the top-level README Mermaid block
-    - Run `mmdc` to generate `curriculum/assets/algorithms-prerequisite-graph.svg` from the algorithms track README Mermaid block
-    - Run `mmdc` to generate `curriculum/assets/design-prerequisite-graph.svg` from the design track README Mermaid block
-    - Create corresponding `.svg.hash` files for each SVG
-    - Verify all three SVG files render correctly
-    - _Requirements: 10.1, 10.2, 10.4_
-
-- [ ] 19. Final checkpoint — Full curriculum validation
-  - Verify the complete curriculum: 52 concept modules across 2 tracks, all prerequisite graphs consistent between module documents and track READMEs, all SVG assets generated, pre-commit hook functional, top-level README links valid. Ensure all tests pass, ask the user if questions arise.
+- [ ] 17. Final checkpoint — Full curriculum validation
+  - Verify the complete curriculum: 52 concept modules across 2 tracks, all prerequisite graphs consistent between module documents and track READMEs, Mermaid diagrams render correctly, top-level README links valid. Ask the user if questions arise.
 
 ## Notes
 
@@ -380,5 +349,5 @@ Create a complete 52-module computer science training curriculum as a collection
 - The design document references a rigid week-numbering structure — follow the requirements as the source of truth
 - Difficulty tier distribution: Beginner modules skew Easy, Intermediate modules are mixed, Advanced modules skew Hard
 - Design Concepts track problems use concrete scenarios instead of input/output pairs
-- Both inline Mermaid code blocks and embedded SVG images are included in READMEs for maximum viewer compatibility
+- Mermaid diagrams are rendered natively by GitHub, GitLab, and VS Code — no SVG export or pre-commit hook needed
 - Checkpoints ensure incremental validation at natural breakpoints

@@ -48,10 +48,11 @@ A computer science training curriculum delivered as a collection of well-structu
 2. THE Daily_Problem SHALL have an estimated completion time between 30 and 60 minutes.
 3. THE Daily_Problem SHALL belong to exactly one Concept_Module and relate directly to that module's Concept.
 4. THE Concept_Module SHALL contain Daily_Problems with a mix of Difficulty_Levels: at least one "Easy" and at least one "Hard" problem per module.
-5. THE Daily_Problem SHALL include a solution outline or approach description to guide self-study.
-6. WHEN multiple Daily_Problems exist within a Concept_Module, THE module SHALL order the problems from lower to higher Difficulty_Level.
-7. THE Daily_Problem SHALL include at least one example input/output pair (for algorithmic problems) or at least one concrete scenario (for design problems).
-8. THE Concept_Module SHALL contain Daily_Problems that exercise different aspects of the Concept (no two problems in the same module shall test the identical sub-skill).
+5. THE Daily_Problem SHALL include a solution outline with pseudocode to guide self-study.
+6. THE Daily_Problem's hints and solution outline (including pseudocode) SHALL be wrapped in collapsible `<details>` elements so they are hidden by default and only visible when the learner explicitly expands them.
+7. WHEN multiple Daily_Problems exist within a Concept_Module, THE module SHALL order the problems from lower to higher Difficulty_Level.
+8. THE Daily_Problem SHALL include at least one example input/output pair (for algorithmic problems) or at least one concrete scenario (for design problems).
+9. THE Concept_Module SHALL contain Daily_Problems that exercise different aspects of the Concept (no two problems in the same module shall test the identical sub-skill).
 
 ### Requirement 4: Algorithms & Data Structures Track Content
 
@@ -121,25 +122,4 @@ A computer science training curriculum delivered as a collection of well-structu
 5. THE prerequisite graph SHALL be consistent with the prerequisite lists defined in each Concept_Module document.
 6. THE top-level README.md SHALL include a simplified overview Mermaid diagram showing the high-level progression across both Tracks.
 
-### Requirement 10: SVG Diagram Assets
 
-**User Story:** As a learner, I want the prerequisite graphs available as SVG images embedded in the markdown files, so that the diagrams render correctly in any markdown viewer regardless of Mermaid support.
-
-#### Acceptance Criteria
-
-1. THE Curriculum SHALL include an `assets/` directory for storing generated diagram files.
-2. EACH Mermaid prerequisite diagram SHALL be exported as an SVG file and stored in the `assets/` directory.
-3. THE markdown files SHALL embed the SVG diagrams using standard markdown image syntax, referencing the corresponding file in `assets/`.
-4. THE SVG files SHALL be named descriptively to match their corresponding Track (e.g., `algorithms-prerequisite-graph.svg`, `design-prerequisite-graph.svg`, `overview-graph.svg`).
-5. THE markdown files SHALL include both the inline Mermaid code block and the embedded SVG image, so that the diagram is viewable via either Mermaid rendering or direct SVG display.
-
-### Requirement 11: Automated SVG Generation on Commit
-
-**User Story:** As a contributor, I want the Mermaid SVG diagrams to be automatically regenerated before each git commit, so that the SVG assets are always in sync with the Mermaid source in the markdown files.
-
-#### Acceptance Criteria
-
-1. THE repository SHALL include a pre-commit git hook that regenerates all SVG diagram files from the Mermaid code blocks in the markdown files.
-2. THE pre-commit hook SHALL update the SVG files in the `assets/` directory before the commit is finalized.
-3. IF the Mermaid code blocks have not changed since the last generation, THE hook SHALL skip regeneration to avoid unnecessary processing.
-4. THE pre-commit hook SHALL fail the commit with a descriptive error message if the Mermaid CLI tool is not installed or SVG generation fails.
