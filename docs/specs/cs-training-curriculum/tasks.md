@@ -190,7 +190,7 @@ Create a complete 52-module computer science training curriculum as a collection
 - [x] 10. Checkpoint — Verify all Algorithms & Data Structures modules
   - Ensure all 26 Algorithms & Data Structures concept modules exist, are consistently formatted, prerequisite lists are correct, and the track README table/graph matches. Ask the user if questions arise.
 
-- [ ] 11. Create Design Concepts Beginner-tier concept modules
+- [x] 11. Create Design Concepts Beginner-tier concept modules
   - [x] 11.1 Create `curriculum/design-concepts/object-oriented-design-principles/README.md`
     - Concept: Object-Oriented Design Principles — Difficulty Tier: Beginner — Prerequisites: None
     - Include concept overview, prerequisite list, and 3–10 daily problems (Beginner tier skews toward Easy)
@@ -219,77 +219,77 @@ Create a complete 52-module computer science training curriculum as a collection
     - Same structure and quality requirements as 11.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 11.6 Create `curriculum/design-concepts/design-patterns-structural/README.md`
+  - [x] 11.6 Create `curriculum/design-concepts/design-patterns-structural/README.md`
     - Concept: Design Patterns (Structural) — Difficulty Tier: Beginner — Prerequisites: SOLID Principles, Design Patterns (Creational)
     - Same structure and quality requirements as 11.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 11.7 Create `curriculum/design-concepts/design-patterns-behavioral/README.md`
+  - [x] 11.7 Create `curriculum/design-concepts/design-patterns-behavioral/README.md`
     - Concept: Design Patterns (Behavioral) — Difficulty Tier: Beginner — Prerequisites: SOLID Principles, Design Patterns (Structural)
     - Same structure and quality requirements as 11.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 11.8 Create `curriculum/design-concepts/caching-strategies/README.md`
+  - [x] 11.8 Create `curriculum/design-concepts/caching-strategies/README.md`
     - Concept: Caching Strategies — Difficulty Tier: Beginner — Prerequisites: None
     - Same structure and quality requirements as 11.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 6.1, 6.3, 7.1–7.3, 8.3, 8.5_
 
-- [ ] 12. Checkpoint — Verify Beginner Design Concepts modules
+- [x] 12. Checkpoint — Verify Beginner Design Concepts modules
   - Ensure all 8 Beginner-tier Design Concepts modules are complete and consistent. Ask the user if questions arise.
 
-- [ ] 13. Create Design Concepts Intermediate-tier concept modules
-  - [ ] 13.1 Create `curriculum/design-concepts/load-balancing/README.md`
+- [x] 13. Create Design Concepts Intermediate-tier concept modules
+  - [x] 13.1 Create `curriculum/design-concepts/load-balancing/README.md`
     - Concept: Load Balancing — Difficulty Tier: Intermediate — Prerequisites: Caching Strategies
     - Include concept overview, prerequisite list, and 3–10 daily problems with mixed difficulty (Intermediate tier)
     - Design problems use scenario format; at least 1 Easy and at least 1 Hard; ordered by difficulty; no duplicate sub-skills
     - Each problem: title, problem statement, difficulty, estimated time (30–60 min), at least one concrete scenario, at least one hint, solution outline
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 13.2 Create `curriculum/design-concepts/message-queues/README.md`
+  - [x] 13.2 Create `curriculum/design-concepts/message-queues/README.md`
     - Concept: Message Queues — Difficulty Tier: Intermediate — Prerequisites: None
     - Same structure and quality requirements as 13.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 13.3 Create `curriculum/design-concepts/rate-limiting/README.md`
+  - [x] 13.3 Create `curriculum/design-concepts/rate-limiting/README.md`
     - Concept: Rate Limiting — Difficulty Tier: Intermediate — Prerequisites: API Design
     - Same structure and quality requirements as 13.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 13.4 Create `curriculum/design-concepts/consistent-hashing/README.md`
+  - [x] 13.4 Create `curriculum/design-concepts/consistent-hashing/README.md`
     - Concept: Consistent Hashing — Difficulty Tier: Intermediate — Prerequisites: Load Balancing
     - Same structure and quality requirements as 13.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 13.5 Create `curriculum/design-concepts/cap-theorem/README.md`
+  - [x] 13.5 Create `curriculum/design-concepts/cap-theorem/README.md`
     - Concept: CAP Theorem — Difficulty Tier: Intermediate — Prerequisites: None
     - Same structure and quality requirements as 13.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 13.6 Create `curriculum/design-concepts/data-partitioning/README.md`
+  - [x] 13.6 Create `curriculum/design-concepts/data-partitioning/README.md`
     - Concept: Data Partitioning — Difficulty Tier: Intermediate — Prerequisites: Database Schema Design, Consistent Hashing, CAP Theorem
     - Same structure and quality requirements as 13.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 13.7 Create `curriculum/design-concepts/replication-strategies/README.md`
+  - [x] 13.7 Create `curriculum/design-concepts/replication-strategies/README.md`
     - Concept: Replication Strategies — Difficulty Tier: Intermediate — Prerequisites: Database Schema Design, CAP Theorem
     - Same structure and quality requirements as 13.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 13.8 Create `curriculum/design-concepts/microservices-architecture/README.md`
+  - [x] 13.8 Create `curriculum/design-concepts/microservices-architecture/README.md`
     - Concept: Microservices Architecture — Difficulty Tier: Intermediate — Prerequisites: Load Balancing, Message Queues
     - Same structure and quality requirements as 13.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 13.9 Create `curriculum/design-concepts/url-shortener-design/README.md`
+  - [x] 13.9 Create `curriculum/design-concepts/url-shortener-design/README.md`
     - Concept: URL Shortener Design — Difficulty Tier: Intermediate — Prerequisites: API Design, Caching Strategies, Rate Limiting, Microservices Architecture
     - Same structure and quality requirements as 13.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.2, 7.1–7.3, 8.3, 8.5_
 
-- [ ] 14. Checkpoint — Verify Intermediate Design Concepts modules
+- [x] 14. Checkpoint — Verify Intermediate Design Concepts modules
   - Ensure all 9 Intermediate-tier Design Concepts modules are complete and consistent. Ask the user if questions arise.
 
 - [ ] 15. Create Design Concepts Advanced-tier concept modules
-  - [ ] 15.1 Create `curriculum/design-concepts/chat-system-design/README.md`
+  - [x] 15.1 Create `curriculum/design-concepts/chat-system-design/README.md`
     - Concept: Chat System Design — Difficulty Tier: Advanced — Prerequisites: Message Queues, Microservices Architecture, URL Shortener Design
     - Include concept overview, prerequisite list, and 3–10 daily problems skewing toward Hard (Advanced tier)
     - Design problems use scenario format; at least 1 Easy and at least 1 Hard; ordered by difficulty; no duplicate sub-skills
