@@ -288,7 +288,7 @@ Create a complete 52-module computer science training curriculum as a collection
 - [x] 14. Checkpoint — Verify Intermediate Design Concepts modules
   - Ensure all 9 Intermediate-tier Design Concepts modules are complete and consistent. Ask the user if questions arise.
 
-- [ ] 15. Create Design Concepts Advanced-tier concept modules
+- [x] 15. Create Design Concepts Advanced-tier concept modules
   - [x] 15.1 Create `curriculum/design-concepts/chat-system-design/README.md`
     - Concept: Chat System Design — Difficulty Tier: Advanced — Prerequisites: Message Queues, Microservices Architecture, URL Shortener Design
     - Include concept overview, prerequisite list, and 3–10 daily problems skewing toward Hard (Advanced tier)
@@ -296,50 +296,50 @@ Create a complete 52-module computer science training curriculum as a collection
     - Each problem: title, problem statement, difficulty, estimated time (30–60 min), at least one concrete scenario, at least one hint, solution outline
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 15.2 Create `curriculum/design-concepts/notification-system-design/README.md`
+  - [x] 15.2 Create `curriculum/design-concepts/notification-system-design/README.md`
     - Concept: Notification System Design — Difficulty Tier: Advanced — Prerequisites: Message Queues, Microservices Architecture, Chat System Design
     - Same structure and quality requirements as 15.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 15.3 Create `curriculum/design-concepts/search-system-design/README.md`
+  - [x] 15.3 Create `curriculum/design-concepts/search-system-design/README.md`
     - Concept: Search System Design — Difficulty Tier: Advanced — Prerequisites: Caching Strategies, Microservices Architecture
     - Same structure and quality requirements as 15.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 15.4 Create `curriculum/design-concepts/news-feed-design/README.md`
+  - [x] 15.4 Create `curriculum/design-concepts/news-feed-design/README.md`
     - Concept: News Feed Design — Difficulty Tier: Advanced — Prerequisites: Caching Strategies, Microservices Architecture, Search System Design
     - Same structure and quality requirements as 15.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 15.5 Create `curriculum/design-concepts/distributed-file-storage-design/README.md`
+  - [x] 15.5 Create `curriculum/design-concepts/distributed-file-storage-design/README.md`
     - Concept: Distributed File Storage Design — Difficulty Tier: Advanced — Prerequisites: Data Partitioning, Replication Strategies
     - Same structure and quality requirements as 15.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 15.6 Create `curriculum/design-concepts/video-streaming-design/README.md`
+  - [x] 15.6 Create `curriculum/design-concepts/video-streaming-design/README.md`
     - Concept: Video Streaming Design — Difficulty Tier: Advanced — Prerequisites: Load Balancing, Caching Strategies, Microservices Architecture, Distributed File Storage Design
     - Same structure and quality requirements as 15.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 15.7 Create `curriculum/design-concepts/payment-system-design/README.md`
+  - [x] 15.7 Create `curriculum/design-concepts/payment-system-design/README.md`
     - Concept: Payment System Design — Difficulty Tier: Advanced — Prerequisites: Microservices Architecture, Notification System Design
     - Same structure and quality requirements as 15.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 15.8 Create `curriculum/design-concepts/monitoring-and-observability/README.md`
+  - [x] 15.8 Create `curriculum/design-concepts/monitoring-and-observability/README.md`
     - Concept: Monitoring & Observability — Difficulty Tier: Advanced — Prerequisites: None
     - Same structure and quality requirements as 15.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-  - [ ] 15.9 Create `curriculum/design-concepts/capstone-end-to-end-system-design/README.md`
+  - [x] 15.9 Create `curriculum/design-concepts/capstone-end-to-end-system-design/README.md`
     - Concept: Capstone: End-to-End System Design — Difficulty Tier: Advanced — Prerequisites: URL Shortener Design, Chat System Design, Payment System Design, Video Streaming Design, Monitoring & Observability
     - Same structure and quality requirements as 15.1
     - _Requirements: 1.4, 2.1–2.5, 3.1–3.8, 5.4, 6.1, 6.4, 7.1–7.3, 8.3, 8.5_
 
-- [ ] 16. Checkpoint — Verify all Design Concepts modules
+- [x] 16. Checkpoint — Verify all Design Concepts modules
   - Ensure all 26 Design Concepts concept modules exist, are consistently formatted, prerequisite lists are correct, and the track README table/graph matches. Ask the user if questions arise.
 
-- [ ] 17. Final checkpoint — Full curriculum validation
+- [x] 17. Final checkpoint — Full curriculum validation
   - Verify the complete curriculum: 52 concept modules across 2 tracks, all prerequisite graphs consistent between module documents and track READMEs, Mermaid diagrams render correctly, top-level README links valid. Ask the user if questions arise.
 
 ## Notes
