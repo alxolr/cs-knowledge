@@ -12,6 +12,40 @@ The naive implementation uses a parent array where each element points to a repr
 
 Union Find is the backbone of several classic algorithms and problem families: Kruskal's minimum spanning tree algorithm, detecting cycles in undirected graphs, computing connected components, and solving dynamic connectivity problems. It also appears in less obvious settings such as grouping accounts, determining redundant connections in networks, and region-merging problems on grids. A solid understanding of graph fundamentals is essential because most Union Find problems are framed in terms of nodes and edges.
 
+### Core Operations — Pseudocode
+
+```
+class UnionFind:
+    parent = array where parent[i] = i   // each element is its own root
+    rank   = array of zeros              // tree height upper bound
+
+    // Find with path compression — nearly O(1) amortized
+    function find(x):
+        if parent[x] != x:
+            parent[x] = find(parent[x])   // path compression
+        return parent[x]
+
+    // Union by rank — nearly O(1) amortized
+    function union(x, y):
+        rootX = find(x)
+        rootY = find(y)
+        if rootX == rootY: return false   // already in same set
+        if rank[rootX] < rank[rootY]:
+            parent[rootX] = rootY
+        else if rank[rootX] > rank[rootY]:
+            parent[rootY] = rootX
+        else:
+            parent[rootY] = rootX
+            rank[rootX] += 1
+        return true
+
+    // Check connectivity — nearly O(1) amortized
+    function connected(x, y):
+        return find(x) == find(y)
+```
+
+Two critical optimizations bring amortized cost to nearly O(1) per operation: path compression (during find, point every visited node directly to the root) and union by rank (attach the shorter tree under the taller one). Together they achieve O(α(n)) amortized time, where α is the inverse Ackermann function — effectively constant.
+
 ---
 
 ## Problem 1 — Basic Disjoint Set Union

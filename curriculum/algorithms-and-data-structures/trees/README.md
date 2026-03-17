@@ -12,6 +12,19 @@ The most common variant in interview and algorithm problems is the binary tree, 
 
 Beyond traversal, trees appear in problems involving depth calculation, path sums, subtree comparison, serialization, and reconstruction from traversal sequences. Mastering tree fundamentals here sets the stage for binary search trees, heaps, tries, and graph algorithms in later modules.
 
+### Core Concepts
+
+A binary tree node has a value and pointers to left and right children. The four standard traversal orders are:
+
+| Traversal | Order | Common Use |
+|---|---|---|
+| Pre-order | Root → Left → Right | Copying/serializing a tree |
+| In-order | Left → Root → Right | BST sorted output |
+| Post-order | Left → Right → Root | Deleting a tree, evaluating expressions |
+| Level-order (BFS) | Level by level, left to right | Finding shortest depth, level grouping |
+
+Depth-first traversals (pre/in/post) use recursion or an explicit stack. Level-order uses a queue. Choosing the right traversal is often the key insight that unlocks a tree problem. Most tree algorithms run in O(n) time and O(h) space, where h is the tree height (O(log n) for balanced trees, O(n) for skewed).
+
 ---
 
 ## Problem 1 — Maximum Depth of a Binary Tree

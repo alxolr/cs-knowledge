@@ -10,6 +10,50 @@ A linked list is a linear data structure where each element (node) contains a va
 
 Linked lists come in several flavors: singly linked (each node points to the next), doubly linked (each node points to both next and previous), and circular (the tail connects back to the head). Mastering linked list manipulation builds strong pointer-reasoning skills that transfer directly to trees, graphs, and many interview-style problems.
 
+### Core Operations — Pseudocode
+
+```
+// Node structure
+class Node:
+    value
+    next = null
+
+// Traverse — O(n)
+function traverse(head):
+    current = head
+    while current != null:
+        visit(current.value)
+        current = current.next
+
+// Insert at head — O(1)
+function insertAtHead(head, value):
+    newNode = Node(value)
+    newNode.next = head
+    return newNode
+
+// Insert at tail — O(n)
+function insertAtTail(head, value):
+    newNode = Node(value)
+    if head == null: return newNode
+    current = head
+    while current.next != null:
+        current = current.next
+    current.next = newNode
+    return head
+
+// Delete first occurrence of value — O(n)
+function delete(head, value):
+    if head == null: return null
+    if head.value == value: return head.next
+    current = head
+    while current.next != null:
+        if current.next.value == value:
+            current.next = current.next.next
+            return head
+        current = current.next
+    return head
+```
+
 ---
 
 ## Problem 1 — Traverse and Collect Values

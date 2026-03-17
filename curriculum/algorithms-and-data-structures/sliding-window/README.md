@@ -12,6 +12,23 @@ There are two main variants. A fixed-size window slides one position at a time a
 
 Sliding window builds directly on array traversal skills and pairs naturally with hash maps for frequency tracking. It is a prerequisite-free stepping stone toward more complex techniques like two-pointer partitioning on unsorted data and segment-tree range queries.
 
+### Core Patterns
+
+There are two main sliding window variants:
+
+| Variant | Window Size | Expansion/Contraction | Typical Use |
+|---|---|---|---|
+| Fixed-size | Constant `k` | Slide one position at a time | Running sum/average of k elements |
+| Variable-size (dynamic) | Changes based on condition | Expand right, shrink left when condition violated | Longest/shortest subarray/substring meeting a constraint |
+
+The general variable-size template:
+1. Expand the window by advancing the right boundary
+2. Update window state (sum, frequency map, etc.)
+3. While the window violates the constraint, shrink from the left
+4. Record the best valid window seen
+
+Sliding window pairs naturally with hash maps for frequency tracking. The key insight is that adding/removing one element at a time keeps each update O(1), avoiding redundant recomputation.
+
 ---
 
 ## Problem 1 — Maximum Sum Subarray of Size K

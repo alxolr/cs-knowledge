@@ -12,6 +12,19 @@ The standard trie uses an array or hash map of children at each node, one slot p
 
 Beyond basic insert/search, tries support powerful operations: finding all words with a given prefix, counting how many words share a prefix, and lexicographic ordering of stored strings. Variants like compressed tries (radix trees) reduce node count by collapsing single-child chains, and ternary search tries trade branching factor for lower memory overhead. Mastering the basic trie is essential before tackling these optimizations and related structures like suffix trees.
 
+### Core Concepts
+
+A trie node holds a map of children (character → child node) and a boolean flag marking end-of-word. Paths from root to marked nodes spell out stored strings.
+
+| Operation | Time | Description |
+|---|---|---|
+| Insert | O(m) | Walk/create nodes for each character, mark end |
+| Search | O(m) | Walk nodes for each character, check end flag |
+| Prefix check | O(m) | Walk nodes for each character (no end flag check needed) |
+| Collect all with prefix | O(m + k) | Walk to prefix node, then DFS to collect k matches |
+
+Where m = length of the word/prefix. Space is O(total characters across all inserted words) in the worst case, but prefix sharing makes tries space-efficient when words overlap heavily. Variants include compressed tries (radix trees) that collapse single-child chains, and ternary search tries that trade branching factor for lower memory.
+
 ---
 
 ## Problem 1 — Implement a Basic Trie

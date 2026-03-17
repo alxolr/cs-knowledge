@@ -12,6 +12,19 @@ The two classic algorithms for topological sorting are Kahn's algorithm (BFS-bas
 
 Beyond producing a single valid ordering, topological sort is a building block for more advanced graph algorithms: shortest and longest paths in DAGs, critical-path analysis, and detecting whether a directed graph is acyclic. Mastering this concept requires comfort with graph representations (adjacency lists), BFS/DFS traversals, and in-degree tracking — all of which build directly on the Graphs prerequisite module.
 
+### Core Algorithms
+
+Two classic approaches for topological sorting, both O(V + E):
+
+| Algorithm | Approach | Cycle Detection | Output |
+|---|---|---|---|
+| Kahn's (BFS) | Track in-degrees, process zero-in-degree nodes | If processed count < V, cycle exists | Nodes in topological order |
+| DFS-based | Post-order traversal, reverse finish order | Back edge (visiting a node currently on stack) = cycle | Reversed post-order = topological order |
+
+Kahn's algorithm is often more intuitive: maintain a queue of nodes with no remaining dependencies, process them, and decrement neighbors' in-degrees. The DFS approach uses three-color marking (unvisited, in-progress, completed) to detect cycles via back edges.
+
+Both algorithms require the graph to be a DAG. If a cycle exists, no valid topological order is possible. Beyond ordering, topological sort is a building block for longest/shortest paths in DAGs, critical-path analysis, and dependency resolution.
+
 ---
 
 ## Problem 1 — Course Schedule Feasibility

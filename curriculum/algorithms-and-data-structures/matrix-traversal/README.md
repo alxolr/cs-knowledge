@@ -12,6 +12,21 @@ Many classic interview and competition problems reduce to "explore a 2D grid und
 
 Mastering matrix traversal builds directly on your array fundamentals and prepares you for graph algorithms, where a grid is simply a graph whose nodes are cells and whose edges connect neighbors.
 
+### Core Concepts
+
+Matrix traversal patterns share common building blocks:
+
+| Pattern | Movement | Typical Use |
+|---|---|---|
+| Row/column scan | Sequential row-by-row or column-by-column | Basic iteration, transposition |
+| Boundary shrinking | Four boundaries (top, bottom, left, right) moving inward | Spiral traversal, layer-by-layer processing |
+| 4-directional neighbors | Up, down, left, right from current cell | Flood fill, island counting, connected regions |
+| 8-directional neighbors | All adjacent cells including diagonals | Shortest path in grid, mine sweeper |
+| BFS on grid | Queue-based level-by-level exploration | Shortest path, distance from source |
+| DFS on grid | Stack/recursion-based deep exploration | Connected component marking, path finding |
+
+Key decisions: traversal order (which cell next?), boundary handling (staying inside the grid), and state management (visited flags, distance counters). A 2D coordinate `(r, c)` can be flattened to `r * cols + c` for use with 1D data structures.
+
 ---
 
 ## Problem 1 — Spiral Order

@@ -10,6 +10,29 @@ Strings are sequences of characters and, in most languages, are stored as arrays
 
 Because strings are so pervasive — from parsing user input to processing log files — fluency with string operations is a must. Many string problems are really array problems in disguise, which is why Arrays is a prerequisite for this module. The key difference is that strings often involve character-specific logic such as case conversion, Unicode handling, and pattern matching.
 
+### Core Operations — Pseudocode
+
+```
+// Character frequency count — O(n)
+function charFrequency(s):
+    freq = empty map
+    for each char in s:
+        freq[char] = freq.getOrDefault(char, 0) + 1
+    return freq
+
+// Simple substring search (brute force) — O(n × m)
+function findSubstring(text, pattern):
+    n = length(text)
+    m = length(pattern)
+    for i from 0 to n - m:
+        match = true
+        for j from 0 to m - 1:
+            if text[i + j] != pattern[j]:
+                match = false; break
+        if match: return i
+    return -1
+```
+
 ---
 
 ## Problem 1 — Reverse a String In-Place

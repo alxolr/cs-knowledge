@@ -12,6 +12,20 @@ Nearly every interval problem begins the same way: sort the intervals by their s
 
 Common patterns include merging overlapping intervals, inserting a new interval into a sorted list, finding the minimum number of resources to cover all intervals (the "meeting rooms" family), and computing intersections between two interval lists. Mastering these patterns builds strong intuition for sweep-line techniques and scheduling problems that appear frequently in interviews and real-world systems.
 
+### Core Concepts
+
+Nearly every interval problem begins the same way: sort the intervals by start (or end) point, then process them in a single left-to-right sweep.
+
+| Pattern | Sort By | Key Idea |
+|---|---|---|
+| Merge overlapping | Start time | Extend end if next interval overlaps current |
+| Insert into sorted list | Already sorted | Three phases: before, overlap (merge), after |
+| Count max overlap | Start and end separately | Sweep line: +1 on start, -1 on end, track peak |
+| Maximum non-overlapping | End time | Greedy: always pick the interval that ends earliest |
+| Intersection of two lists | Already sorted | Two pointers: overlap = [max(starts), min(ends)] |
+
+Two intervals `[a, b]` and `[c, d]` overlap when `a <= d` and `c <= b` (after sorting). The sweep-line technique treats starts and ends as events on a timeline, incrementing/decrementing a counter to find peak overlap.
+
 ---
 
 ## Problem 1 — Merge Overlapping Intervals

@@ -10,6 +10,39 @@ A hash map (also called a hash table or dictionary) is a data structure that map
 
 Hash maps are one of the most frequently used data structures in practice. They power database indexing, caching, symbol tables in compilers, and countless algorithmic tricks where you need fast membership testing or frequency counting. Understanding how hash maps work — and their worst-case O(n) behavior under heavy collisions — is foundational knowledge for every programmer.
 
+### Core Operations — Pseudocode
+
+```
+// Hash map with separate chaining
+class HashMap:
+    buckets = array of empty lists, size = capacity
+
+    function hash(key):
+        return hashCode(key) mod capacity
+
+    // Put — O(1) average
+    function put(key, value):
+        index = hash(key)
+        for each (k, v) in buckets[index]:
+            if k == key:
+                update v to value
+                return
+        buckets[index].append((key, value))
+
+    // Get — O(1) average
+    function get(key):
+        index = hash(key)
+        for each (k, v) in buckets[index]:
+            if k == key:
+                return v
+        return null
+
+    // Delete — O(1) average
+    function delete(key):
+        index = hash(key)
+        remove entry with matching key from buckets[index]
+```
+
 ---
 
 ## Problem 1 — Two Sum with Hash Map

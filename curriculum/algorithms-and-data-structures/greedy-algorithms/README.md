@@ -12,6 +12,20 @@ Greedy algorithms work correctly only when the problem exhibits two properties: 
 
 The main challenge with greedy algorithms is proving correctness. A greedy strategy that seems intuitive can fail on subtle edge cases, so learning to construct exchange arguments or use matroids to justify a greedy choice is an important skill. Familiarity with sorting is essential because many greedy algorithms begin by sorting the input according to some criterion (deadline, weight, finish time, etc.) before making sequential choices.
 
+### Core Concept
+
+A greedy algorithm works correctly only when the problem exhibits two properties:
+
+1. **Greedy-choice property** — a globally optimal solution can be assembled from locally optimal choices
+2. **Optimal substructure** — an optimal solution contains optimal solutions to its sub-problems
+
+The general pattern:
+1. Sort the input by some criterion (deadline, weight, finish time, ratio, etc.)
+2. Iterate through the sorted input, making the locally optimal choice at each step
+3. Never reconsider previous choices
+
+The main challenge is proving correctness — a greedy strategy that seems intuitive can fail on subtle edge cases. Learning to construct exchange arguments (showing that swapping any non-greedy choice for the greedy one doesn't worsen the solution) is an important skill. Classic greedy families include activity/interval scheduling, fractional optimization, and minimum spanning trees.
+
 ---
 
 ## Problem 1 — Assign Cookies

@@ -10,6 +10,32 @@ A stack is a linear data structure that follows the Last-In, First-Out (LIFO) pr
 
 Stacks appear everywhere in computing — from the call stack that manages function invocations, to undo mechanisms in text editors, to expression parsing in compilers. Many algorithmic problems that involve matching, nesting, or backtracking can be elegantly solved with a stack. Building fluency with stack-based thinking is essential before tackling recursion and backtracking later in the curriculum.
 
+### Core Operations — Pseudocode
+
+```
+// Stack backed by a dynamic array
+class Stack:
+    items = []
+
+    // Push — O(1) amortized
+    function push(value):
+        items.append(value)
+
+    // Pop — O(1)
+    function pop():
+        if isEmpty(): error "Stack underflow"
+        return items.removeLast()
+
+    // Peek — O(1)
+    function peek():
+        if isEmpty(): error "Stack is empty"
+        return items[length(items) - 1]
+
+    // isEmpty — O(1)
+    function isEmpty():
+        return length(items) == 0
+```
+
 ---
 
 ## Problem 1 — Valid Parentheses

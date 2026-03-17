@@ -12,6 +12,19 @@ Key topics include minimum spanning trees (Kruskal's and Prim's algorithms), sho
 
 Mastering these algorithms is essential for tackling real-world problems in network design, routing, dependency analysis, and infrastructure resilience. The problems in this module exercise distinct sub-skills — from building spanning trees to finding shortest paths to identifying critical graph structures — ensuring broad coverage of the advanced graph algorithm landscape.
 
+### Key Algorithms Overview
+
+| Algorithm | Problem | Time | Key Idea |
+|---|---|---|---|
+| Kruskal's | Minimum Spanning Tree | O(E log E) | Sort edges by weight, greedily add if no cycle (Union Find) |
+| Prim's | Minimum Spanning Tree | O((V+E) log V) | Grow MST from a start node using a min-heap |
+| Dijkstra's | Shortest path (non-negative weights) | O((V+E) log V) | Greedy relaxation with min-heap priority queue |
+| Bellman-Ford | Shortest path (any weights) | O(V × E) | Relax all edges V-1 times; detects negative cycles |
+| Tarjan's bridges | Find bridges/articulation points | O(V + E) | DFS with discovery time and low-link values |
+| Kosaraju's | Strongly connected components | O(V + E) | Two-pass DFS: finish order on original, then DFS on transpose |
+
+Key concepts: MST algorithms rely on the cut property (the lightest edge crossing any cut belongs to some MST). Dijkstra's fails with negative weights because it assumes finalized distances. Bellman-Ford handles negative weights but is slower. Bridges are edges whose removal disconnects the graph, detected when a subtree has no back edge reaching above its parent.
+
 ---
 
 ## Problem 1 — Minimum Spanning Tree (Kruskal's)

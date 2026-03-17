@@ -12,6 +12,58 @@ The two fundamental operations are insert (bubble up) and extract-min/max (bubbl
 
 Heaps power priority queues, which appear everywhere: scheduling algorithms, graph shortest-path routines (Dijkstra), event-driven simulations, and streaming "top-K" problems. Understanding heaps also lays the groundwork for heap sort and for more advanced structures like Fibonacci heaps. The problems below explore insertion, extraction, streaming medians, K-way merging, and scheduling — each exercising a different facet of heap-based thinking.
 
+### Core Operations — Pseudocode
+
+A heap is stored as a flat array. For a node at index `i`: parent = `(i-1)/2`, left child = `2i+1`, right child = `2i+2`.
+
+```
+class MinHeap:
+    data = []
+
+    // Insert — O(log n): append to end, bubble up
+    function insert(value):
+        data.append(value)
+        bubbleUp(length(data) - 1)
+
+    function bubbleUp(index):
+        while index > 0:
+            parent = (index - 1) / 2
+            if data[index] < data[parent]:
+                swap(data[index], data[parent])
+                index = parent
+            else:
+                break
+
+    // Extract min — O(log n): swap root with last, remove last, bubble down
+    function extractMin():
+        if length(data) == 0: error "Heap is empty"
+        min = data[0]
+        data[0] = data[length(data) - 1]
+        data.removeLast()
+        bubbleDown(0)
+        return min
+
+    function bubbleDown(index):
+        n = length(data)
+        while true:
+            smallest = index
+            left = 2 * index + 1
+            right = 2 * index + 2
+            if left < n and data[left] < data[smallest]:
+                smallest = left
+            if right < n and data[right] < data[smallest]:
+                smallest = right
+            if smallest == index: break
+            swap(data[index], data[smallest])
+            index = smallest
+
+    // Peek — O(1)
+    function peekMin():
+        return data[0]
+```
+
+Building a heap from an unsorted array can be done in O(n) using bottom-up heapify (start from the last non-leaf node and bubble down each one), which is faster than inserting elements one by one (O(n log n)).
+
 ---
 
 ## Problem 1 — Kth Largest Element in an Array

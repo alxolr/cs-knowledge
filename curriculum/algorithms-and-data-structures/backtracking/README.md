@@ -12,6 +12,23 @@ The general pattern is: make a choice, recurse to extend the partial solution, t
 
 Backtracking appears in a wide range of classic problems: generating permutations and combinations, solving constraint-satisfaction puzzles (Sudoku, N-Queens), partitioning sets, and finding paths in grids or graphs. The key to writing efficient backtracking solutions is designing strong pruning conditions that eliminate invalid branches early, dramatically reducing the effective search space compared to brute-force enumeration.
 
+### Core Template — Pseudocode
+
+```
+// General backtracking template
+function backtrack(state, choices, result):
+    if state is a complete solution:
+        result.append(copy of state)
+        return
+    for each choice in choices:
+        if choice is valid (pruning check):
+            make choice (modify state)
+            backtrack(state, remaining choices, result)
+            undo choice (restore state)
+```
+
+The "choose → explore → un-choose" loop is the heart of backtracking. The key to efficiency is designing strong pruning conditions that eliminate invalid branches early, dramatically reducing the effective search space compared to brute-force enumeration. Common pruning strategies include: skipping duplicate values, checking constraints before recursing, and sorting input to enable early termination.
+
 ---
 
 ## Problem 1 — Generate All Subsets

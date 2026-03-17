@@ -12,6 +12,18 @@ Two pointers come in several flavors. The most common are the "opposite-directio
 
 Mastering two pointers is a gateway to more advanced sliding-window and interval techniques. The core insight — that maintaining two positions lets you eliminate large swaths of the search space — recurs throughout competitive programming and real-world algorithm design.
 
+### Core Patterns
+
+Two pointers come in several flavors:
+
+| Pattern | Pointer Setup | Typical Use Case |
+|---|---|---|
+| Opposite-direction | One at start, one at end, moving inward | Pair-sum on sorted data, container problems |
+| Same-direction (fast/slow) | Both start at beginning, one advances faster | Deduplication, partitioning, linked-list cycle detection |
+| Sliding window hybrid | Left and right define a window | Substring/subarray optimization (see Sliding Window module) |
+
+The key insight is that maintaining two positions lets you eliminate large swaths of the search space in a single pass, turning O(n²) brute-force pair enumeration into O(n) linear scans. Choosing the right variant depends on the problem's structure: sorted arrays often call for opposite-direction pointers, while partitioning and cycle problems favor fast-and-slow.
+
 ---
 
 ## Problem 1 — Pair with Target Sum (Sorted Array)

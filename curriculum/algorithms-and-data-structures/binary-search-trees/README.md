@@ -12,6 +12,19 @@ When a BST is balanced, h = O(log n) and operations rival the speed of binary se
 
 BSTs are the backbone of ordered collections in standard libraries (e.g., `TreeMap` in Java, `std::set` in C++). Mastering them means you can reason about in-order traversals, predecessor/successor queries, range searches, and the structural properties that keep trees efficient. The problems below explore these facets from basic validation to advanced structural transformations.
 
+### Core Operations
+
+A BST node stores a value and pointers to left/right children. The BST invariant ensures: all left subtree values < node value < all right subtree values.
+
+| Operation | Time (balanced) | Time (degenerate) | Description |
+|---|---|---|---|
+| Search | O(log n) | O(n) | Follow left/right based on comparison |
+| Insert | O(log n) | O(n) | Search for position, create new leaf |
+| Delete | O(log n) | O(n) | Three cases: no children, one child, two children (replace with in-order successor) |
+| In-order traversal | O(n) | O(n) | Visits nodes in sorted order |
+
+Key concepts: the in-order traversal of a BST produces a sorted sequence. When deleting a node with two children, replace it with its in-order successor (smallest node in right subtree) or predecessor (largest in left subtree). A degenerate BST (all nodes in a chain) has O(n) operations, motivating self-balancing variants like AVL and red-black trees.
+
 ---
 
 ## Problem 1 — Validate Binary Search Tree

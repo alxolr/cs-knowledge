@@ -10,6 +10,33 @@ An array is a contiguous block of memory that stores a fixed-size sequence of el
 
 Understanding arrays means understanding index arithmetic, in-place manipulation, traversal patterns, and the trade-offs between time and space when solving problems. Nearly every other data structure — from strings to heaps — builds on the mental model of sequential, indexed storage. Mastering array techniques early gives you a toolkit you will reuse throughout the entire curriculum.
 
+### Core Operations — Pseudocode
+
+```
+// Access element by index — O(1)
+function get(array, index):
+    return array[index]
+
+// Linear search — O(n)
+function linearSearch(array, target):
+    for i from 0 to length(array) - 1:
+        if array[i] == target:
+            return i
+    return -1
+
+// Insert at index (shifting elements right) — O(n)
+function insertAt(array, index, value):
+    for i from length(array) down to index + 1:
+        array[i] = array[i - 1]
+    array[index] = value
+
+// Remove at index (shifting elements left) — O(n)
+function removeAt(array, index):
+    for i from index to length(array) - 2:
+        array[i] = array[i + 1]
+    shrink array by 1
+```
+
 ---
 
 ## Problem 1 — Find the Maximum Element

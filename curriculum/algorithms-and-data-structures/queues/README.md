@@ -10,6 +10,42 @@ A queue is a linear data structure that follows the First-In, First-Out (FIFO) p
 
 Queues model real-world scenarios like task scheduling, print job management, and breadth-first traversal of graphs and trees. Variations such as circular queues, double-ended queues (deques), and priority queues extend the basic idea to cover a wide range of algorithmic patterns. Building comfort with queue-based reasoning is essential preparation for graph algorithms later in the curriculum.
 
+### Core Operations — Pseudocode
+
+```
+// Queue backed by a linked list (O(1) enqueue and dequeue)
+class Queue:
+    head = null
+    tail = null
+
+    // Enqueue — O(1)
+    function enqueue(value):
+        newNode = Node(value)
+        if tail != null:
+            tail.next = newNode
+        tail = newNode
+        if head == null:
+            head = newNode
+
+    // Dequeue — O(1)
+    function dequeue():
+        if head == null: error "Queue underflow"
+        value = head.value
+        head = head.next
+        if head == null:
+            tail = null
+        return value
+
+    // Peek — O(1)
+    function peek():
+        if head == null: error "Queue is empty"
+        return head.value
+
+    // isEmpty — O(1)
+    function isEmpty():
+        return head == null
+```
+
 ---
 
 ## Problem 1 — Implement a Queue Using an Array

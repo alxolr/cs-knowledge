@@ -10,6 +10,17 @@ Sorting is the process of arranging elements in a defined order — typically as
 
 Common sorting algorithms include comparison-based methods (bubble sort, insertion sort, merge sort, quicksort) and non-comparison-based methods (counting sort, radix sort). Each has different best-case, average-case, and worst-case complexities, as well as stability and in-place characteristics. This module focuses on understanding these trade-offs and applying sorting as a building block for more complex problems.
 
+### Key Concepts
+
+| Algorithm | Time (Worst / Avg / Best) | Space | Stable? | In-place? |
+|---|---|---|---|---|
+| Insertion Sort | O(n²) / O(n²) / O(n) | O(1) | Yes | Yes |
+| Merge Sort | O(n log n) / O(n log n) / O(n log n) | O(n) | Yes | No |
+| Quick Sort | O(n²) / O(n log n) / O(n log n) | O(log n) | No | Yes |
+| Counting Sort | O(n + k) | O(k) | Yes | No |
+
+Key trade-offs to consider: stability (preserving relative order of equal elements), in-place vs. extra memory, and how the algorithm performs on nearly-sorted or adversarial inputs. Divide-and-conquer sorts (merge sort, quicksort) achieve O(n log n) by splitting the problem, while comparison-based lower bound proves no comparison sort can do better.
+
 ---
 
 ## Problem 1 — Implement Insertion Sort

@@ -12,6 +12,24 @@ Graphs come in two main flavors: directed (edges have a direction) and undirecte
 
 Representation matters too. An adjacency list maps each node to its list of neighbors and is space-efficient for sparse graphs. An adjacency matrix uses a 2D array for O(1) edge lookups but costs O(V²) space. Choosing the right representation and traversal strategy is the first decision in any graph problem, and mastering these fundamentals unlocks advanced topics like topological sort, shortest-path algorithms, and network flow.
 
+### Core Concepts
+
+Graphs are represented in two main ways:
+
+| Representation | Space | Edge Lookup | Best For |
+|---|---|---|---|
+| Adjacency list | O(V + E) | O(degree) | Sparse graphs |
+| Adjacency matrix | O(V²) | O(1) | Dense graphs |
+
+The two foundational traversals:
+
+| Traversal | Data Structure | Explores | Finds |
+|---|---|---|---|
+| BFS | Queue | Level by level | Shortest path (unweighted), connected components |
+| DFS | Stack / Recursion | As deep as possible | Cycles, connected components, topological order |
+
+Both BFS and DFS run in O(V + E) time. BFS naturally finds shortest paths in unweighted graphs because it visits nodes in order of increasing distance. DFS is ideal for detecting cycles (via back edges), exploring connected components, and backtracking through paths. Choosing the right representation and traversal strategy is the first decision in any graph problem.
+
 ---
 
 ## Problem 1 — Breadth-First Traversal of a Graph

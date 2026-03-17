@@ -10,6 +10,19 @@ Binary search is an efficient algorithm for finding a target value within a sort
 
 Beyond the classic "find a value in a sorted array" use case, binary search generalizes to any situation where you can define a monotonic predicate over a search space. This makes it applicable to problems like finding boundaries, searching in rotated arrays, and optimizing over continuous or discrete domains. Mastering binary search and its edge cases (off-by-one errors, choosing between `left <= right` vs. `left < right`) is a rite of passage for every algorithm practitioner.
 
+### Key Concepts
+
+Binary search has several common variants, each differing in loop condition and pointer updates:
+
+| Variant | Loop Condition | Key Insight |
+|---|---|---|
+| Standard (`left <= right`) | Searches for exact match | Returns index or -1 |
+| Lower bound (`left < right`) | Finds first element ≥ target | `right = mid` when condition met |
+| Upper bound (`left < right`) | Finds first element > target | `left = mid + 1` when condition met |
+| Predicate-based | Generalized monotonic search | Works on any boolean predicate over a range |
+
+Common pitfalls: off-by-one errors in boundary updates, integer overflow when computing `mid` (use `left + (right - left) / 2`), and choosing between `left <= right` vs. `left < right` loop conditions. The generalized form applies to any monotonic predicate over a search space, not just sorted arrays.
+
 ---
 
 ## Problem 1 — Classic Binary Search

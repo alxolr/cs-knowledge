@@ -10,6 +10,21 @@ Recursion is a problem-solving technique where a function calls itself to solve 
 
 Recursion is the foundation for many advanced algorithmic paradigms — divide and conquer, backtracking, dynamic programming, and tree/graph traversals all rely on recursive thinking. Understanding how the call stack works, how to identify overlapping sub-problems, and how to convert between recursive and iterative solutions are skills you will use throughout the rest of this curriculum.
 
+### General Template — Pseudocode
+
+```
+// Every recursive function has two parts:
+//   1. Base case — stops the recursion
+//   2. Recursive case — reduces the problem and calls itself
+
+function solve(problem):
+    if problem is base case:
+        return base solution
+    smaller = reduce(problem)
+    subResult = solve(smaller)
+    return combine(problem, subResult)
+```
+
 ---
 
 ## Problem 1 — Factorial

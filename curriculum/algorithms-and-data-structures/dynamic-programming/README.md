@@ -12,6 +12,23 @@ The technique builds on recursion and divide and conquer: you still decompose a 
 
 DP problems generally fall into several families: linear sequences (climbing stairs, house robber), grid paths, string matching (edit distance, longest common subsequence), knapsack variants, interval scheduling, and tree/graph DP. Mastering the pattern of identifying states, writing the recurrence, choosing top-down vs. bottom-up, and optimizing space usage is essential for tackling hard algorithmic challenges.
 
+### Core Concepts
+
+DP problems follow a consistent methodology:
+
+1. **Define the state** — what sub-problem does `dp[i]` (or `dp[i][j]`) represent?
+2. **Write the recurrence** — how does the answer to a larger state depend on smaller states?
+3. **Identify base cases** — what are the trivially solvable states?
+4. **Choose top-down vs. bottom-up** — memoization (recursive + cache) or tabulation (iterative)?
+5. **Optimize space** — can you reduce from 2D to 1D, or from O(n) to O(1)?
+
+| Approach | Style | Pros | Cons |
+|---|---|---|---|
+| Top-down (memoization) | Recursive + cache | Only computes needed states | Recursion overhead, stack depth |
+| Bottom-up (tabulation) | Iterative | No recursion overhead, easier space optimization | Must determine computation order |
+
+Common DP families: linear sequences (1D state), grid paths (2D state), string matching (two-string 2D state), knapsack variants (item × capacity), and interval DP. The key skill is recognizing overlapping sub-problems and defining a clear recurrence relation.
+
 ---
 
 ## Problem 1 — Climbing Stairs

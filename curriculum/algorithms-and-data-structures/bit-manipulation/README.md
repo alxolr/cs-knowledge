@@ -12,6 +12,37 @@ The key insight behind most bit-manipulation techniques is that each bit in an i
 
 Understanding bit manipulation also deepens your grasp of how computers represent data. Signed vs. unsigned integers, two's complement, and overflow behavior all become clearer once you think in binary. These fundamentals surface in systems programming, cryptography, graphics, and networking — anywhere performance or compact representation matters.
 
+### Core Operations — Pseudocode
+
+```
+// Common bitwise operators
+// AND (&): clears bits          OR (|): sets bits
+// XOR (^): toggles bits         NOT (~): inverts all bits
+// Left shift (<<): multiply by 2   Right shift (>>): divide by 2
+
+// Check if the k-th bit is set (0-indexed from right)
+function isKthBitSet(n, k):
+    return (n >> k) & 1 == 1
+
+// Set the k-th bit
+function setKthBit(n, k):
+    return n | (1 << k)
+
+// Clear the k-th bit
+function clearKthBit(n, k):
+    return n & ~(1 << k)
+
+// Toggle the k-th bit
+function toggleKthBit(n, k):
+    return n ^ (1 << k)
+
+// Clear the lowest set bit — key building block for many problems
+function clearLowestSetBit(n):
+    return n & (n - 1)
+```
+
+Key properties to remember: `x ^ x = 0` (XOR cancels identical values), `x ^ 0 = x`, `n & (n-1)` clears the lowest set bit, and `n & (-n)` isolates the lowest set bit. These primitives unlock solutions to counting, parity, uniqueness, and subset enumeration problems.
+
 ---
 
 ## Problem 1 — Single Number

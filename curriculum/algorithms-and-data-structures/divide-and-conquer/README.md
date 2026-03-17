@@ -12,6 +12,22 @@ This strategy underpins many of the most important algorithms in computer scienc
 
 A solid grasp of recursion is essential because every divide-and-conquer algorithm is expressed as a recursive function. The key skill beyond basic recursion is learning how to identify the right way to split the problem and how to merge partial results efficiently — the "combine" step is frequently where the real algorithmic insight lives.
 
+### Core Template — Pseudocode
+
+```
+// General divide-and-conquer template
+function divideAndConquer(problem):
+    if problem is small enough:          // base case
+        return directSolve(problem)
+    subproblems = divide(problem)        // divide
+    subresults = []
+    for each sub in subproblems:
+        subresults.append(divideAndConquer(sub))  // conquer
+    return combine(subresults)           // combine
+```
+
+The efficiency of divide and conquer often comes from reducing the number of sub-problems or the cost of the combine step. The Master Theorem provides a framework for analyzing the time complexity: for recurrences of the form T(n) = aT(n/b) + O(n^d), the solution depends on the relationship between log_b(a) and d. The "combine" step is frequently where the real algorithmic insight lives.
+
 ---
 
 ## Problem 1 — Merge Sort
